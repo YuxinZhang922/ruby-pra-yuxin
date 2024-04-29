@@ -27,3 +27,21 @@ blockchain = [
 # Anthony's KelloggCoin balance is 2650
 
 # 👇👇👇 Your code HERE 👇👇👇
+balance = {}
+for transaction in blockchain
+  if balance[transaction["from_user"]] != nil
+    balance[transaction["from_user"]] = balance[transaction["from_user"]] - transaction["amount"]
+
+  end
+
+  if balance[transaction["to_user"]] != nil
+    balance[transaction["to_user"]] = balance[transaction["to_user"]] + transaction["amount"]
+  else
+    balance[transaction["to_user"]] = transaction["amount"]
+  end
+
+end
+
+for bal in balance
+  puts "#{bal[0]}'s KelloggCoin balance is #{bal[1]}"
+end
